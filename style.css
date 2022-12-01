@@ -1,15 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;500&family=Roboto+Condensed:wght@300;400&display=swap');
+
 * {
     font-size: 16px;
 }
 
-html {
+html,
+body {
     margin: 0;
+}
+
+#backdrop {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#backdrop.is-active {
+    display: block;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     transition: all 0.5s ease;
+    background-color: #fff6eb;
+    padding: 4px;
+    z-index: 999;
 }
 
 ul {
@@ -19,8 +41,11 @@ ul {
     align-items: center;
 }
 
+
 ul li {
     list-style-type: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 2px;
 }
 
 ul li a {
@@ -28,7 +53,7 @@ ul li a {
 }
 
 ul li a:hover {
-    text-decoration: underline;
+    opacity: 0.4;
 }
 
 #hamburger {
@@ -72,33 +97,37 @@ ul li a:hover {
 
 @media screen and (max-width: 767px) {
     nav ul {
-        transition: all 0.5s ease;
+        transition: all 0.6s ease;
         display: flex;
         flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        height: 100vh;
+        height: 16rem;
         width: 100%;
-        z-index: 999;
-        background-color: bisque;
+        background-color: #fff6eb;
         padding: 0;
         position: absolute;
-        left: -25rem;
-        top: 0;
+        top: 2.75rem;
         margin-top: 0;
-        padding: 0;
+        align-items: flex-start;
+        left: -30rem;
+        margin: 0;
     }
 
     #hamburger {
         display: block;
-        z-index: 999;
     }
 
     nav ul.is-active {
         left: 0;
+        top: 2.75rem;
     }
 
     nav ul li {
-        padding: 10px;
+        padding: 0.8rem 1rem;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid rgb(144, 144, 144);
+        align-items: center;
     }
 }

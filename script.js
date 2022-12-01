@@ -13,5 +13,6 @@ navLinks.forEach(item => {
     item.addEventListener('click', () => {
         hamburgerMenu.classList.remove('is-active');
         navBar.classList.remove('is-active');
+        backdropElement.classList.remove('is-active');
     })
 })
